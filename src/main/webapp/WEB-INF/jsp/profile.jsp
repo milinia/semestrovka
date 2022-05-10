@@ -1,16 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: milinia
-  Date: 08.11.2020
-  Time: 12:35
-  To change this template use File | Settings | File Templates.
---%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../../profile.css">
+    <link rel="stylesheet" type="text/css" href="../style/profile.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -45,17 +35,8 @@
         .profile{
             float: left;
         }
-        /*#button{*/
-        /*    margin-top: 30px;*/
-        /*    float: left;*/
-        /*    margin-left: 86%;*/
-        /*    margin-bottom: 23px;*/
-        /*}*/
         .table.table-striped{
             margin-top: 30px;
-        }
-        .thead-dark{
-            color: #173D80;
         }
         .btn {
             float: right;

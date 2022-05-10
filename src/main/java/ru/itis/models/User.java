@@ -1,48 +1,32 @@
 package ru.itis.models;
 
 import lombok.*;
+import javax.persistence.*;
+import java.util.List;
 
+@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@ToString
-@EqualsAndHashCode
-@Getter
-@Setter
+@Entity
+@Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String surname;
+
+    @Column(name = "email")
     private String email;
-    private String password;
 
-    public User(String email, String password){
-        this.email = email;
-        this.password = password;
-    }
-    public User(Long id, String password){
-        this.password = password;
-        this.id = id;
-    }
+    @Column(name = "password_hash")
+    private String passwordHash;
+
+    private String nickname;
+
+    //0,75 на кг веса
+    private Integer weight;
+
+    @OneToMany(mappedBy = "user")
+    private List<Auth> auth;
 }
-
-//    public String getEmail() { return email; }
-//    public Long getId() { return id; }
-//    public String getName() {
-//        return name;
-//    }
-//    public String getPassword() {
-//        return password;
-//    }
-//    public String getSurname() {
-//        return surname;
-//    }
-
-//    public User(Long id, String email, String name,String surname,String password){
-//        this.id = id;
-//        this.email = email;
-//        this.name = name;
-//        this.surname = surname;
-//        this.password = password;
-//    }

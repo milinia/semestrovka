@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Subscriptions in one place</title>
-    <link rel="stylesheet" type="text/css" href="../../mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../style/mainPage.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         a{
@@ -108,7 +108,7 @@
     <div class="about"><a href="#about">About</a></div><div class="help" ><a href="https://t.me/joinchat/AAAAAFQWSCPevEv7iMu3Nw">Help</a>
     </div><button type="button" class="btn btn-outline-dark"><a href="${pageContext.request.contextPath}/signup">Sign up</a></button></div>
 
-<div><center>
+<div>
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -135,7 +135,7 @@
             <span class="carousel-control-next-icon"></span>
         </a>
     </div>
-</center></div>
+</div>
 
 <div class="text-field"><div id="about">
     Subscriptions in one place - it is a service that allows you to control subscriptions to music, movies and serials. Sign up and enter servises that you use, choose whether you need to be notified and we send your notification about the end of the subscription. So you be able to unsubscribe in time and save you money.
