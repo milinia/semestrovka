@@ -6,9 +6,11 @@ import ru.itis.models.Day;
 import ru.itis.models.Product;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-interface ProductRepository extends JpaRepository<Product,Long> {
+public interface ProductRepository extends JpaRepository<Product,Long> {
 //    void addProductToDay(Day day);
 //    List<Product> getAllAvailableProducts();
+    Product findByName(String name);
 }

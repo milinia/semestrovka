@@ -8,5 +8,6 @@ import java.util.Date;
 public class MessageDto {
     private String from;
     private String text;
+    private String linkToImage;
 }
 

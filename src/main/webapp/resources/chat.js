@@ -1,6 +1,6 @@
 var webSocket;
 
-function connect(id) {
+function connect() {
     webSocket = new WebSocket('ws://localhost:8080/chat');
 
     webSocket.onmessage = function receiveMessage(response) {
@@ -8,7 +8,7 @@ function connect(id) {
         let json = JSON.parse(data);
         $('#messagesList').first().after("<p>" + "<strong>" +json['from'] + ": " + "</strong>" +  json['text'] + "</p>")
     };
-
+    //"<img src='" + json['linkToImage'] +"' width='20' height='20'>" +
     webSocket.onerror = function errorShow() {
         alert('Authorization error!')
     }

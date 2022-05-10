@@ -6,8 +6,10 @@ import ru.itis.models.Chat;
 import ru.itis.models.User;
 import ru.itis.repositories.ChatRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
 @Service
 public class ChatServiceImpl implements ChatService {
 

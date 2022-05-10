@@ -22,6 +22,11 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "nutritionInfo")
-    private String nutritionInfo;
+    private Float calories;
+
+    private Float protein;
+
+    private Float fiber;
+
+    private Float carbs;
 }

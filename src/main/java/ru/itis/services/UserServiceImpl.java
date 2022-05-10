@@ -1,6 +1,7 @@
 package ru.itis.services;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.transaction.annotation.Transactional;
 import ru.itis.dtos.RegistrationDto;
 import ru.itis.exception.NoSuchUserException;
 import ru.itis.exception.UserAlreadyExistException;
@@ -11,6 +12,7 @@ import ru.itis.repositories.UserRepository;
 
 import java.util.Optional;
 
+@Transactional
 @Service("userService")
 public class UserServiceImpl implements UserService{
 

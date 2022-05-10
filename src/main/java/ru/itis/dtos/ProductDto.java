@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class ProductDto {
-    private Long productId;
+    private String product;
     private Integer amount; //in grams
 }

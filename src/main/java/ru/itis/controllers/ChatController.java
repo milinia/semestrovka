@@ -15,7 +15,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 
-@Transactional
 @Controller
 public class ChatController {
 

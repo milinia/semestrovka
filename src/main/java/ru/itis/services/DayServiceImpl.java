@@ -2,6 +2,7 @@ package ru.itis.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.itis.models.Day;
 import ru.itis.models.User;
 import ru.itis.repositories.DayRepository;
@@ -49,6 +50,11 @@ public class DayServiceImpl implements DayService{
        Day day = Day.builder()
                .date(date)
                .user(user)
+               .burnedCalories((float) 0)
+               .calories((float) 0)
+               .carbs((float) 0)
+               .fiber((float) 0)
+               .protein((float) 0)
                .build();
        dayRepository.save(day);
        return day;
@@ -61,7 +67,13 @@ public class DayServiceImpl implements DayService{
 
     @Override
     public void addBurnedCalories(Long dayId, Float burnedCalories) {
-        Optional<Day> day = dayRepository.findById(dayId);
-        day.ifPresent(value -> dayRepository.updateBurnedCaloriesByDayId(dayId, burnedCalories + value.getBurnedCalories()));
+        Day day = findDayById(dayId);
+        Float oldBurnedCalories = day.getBurnedCalories();
+        if (oldBurnedCalories == null) {
+            dayRepository.updateBurnedCaloriesByDayId(dayId, burnedCalories);
+        } else {
+            dayRepository.updateBurnedCaloriesByDayId(dayId, burnedCalories + day.getBurnedCalories());
+        }
+        //day.ifPresent(value -> dayRepository.updateBurnedCaloriesByDayId(dayId, burnedCalories + value.getBurnedCalories()));
     }
 }

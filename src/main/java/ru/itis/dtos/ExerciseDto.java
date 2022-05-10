@@ -6,5 +6,5 @@ import lombok.Data;
 public class ExerciseDto {
     private String kind;
     private Integer duration;
-    private String id;
+    private String dayId;
 }

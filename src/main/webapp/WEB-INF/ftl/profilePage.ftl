@@ -2,6 +2,7 @@
 <html lang="">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Food tracking</title>
     <script src="/resources/ajax.js"></script>
     <style>
@@ -42,7 +43,10 @@
 <body>
 <div class="mainHeader">
     <img src="/resources/logo.jpeg" width="220" height="80">
-    <div class="links"><a href="/chats">Chats</a></div>
+    <div class="links">
+        <a href="/chats">Chats</a>
+        <a href="/logout">Log out</a>
+    </div>
 </div>
 <div class="all">
     <div class="day">
@@ -66,12 +70,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control" placeholder="Food" name="food" required>
-                        <input type="number" class="form-control" placeholder="Amount in grams" name="amount" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Add</button>
+                        <fieldset>
+                            <input type="text" class="form-control" placeholder="Food" name="food" required>
+                            <input type="number" class="form-control" placeholder="Amount in grams" name="amount" required>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="sendProduct()">Add</button>
+                        </fieldset>
                     </div>
                 </div>
             </div>
@@ -131,7 +135,7 @@
                         <img src="https://img.icons8.com/ultraviolet/344/running.png" width="20" height="20">
                         ${exerise.exercise.kind}
                     </td>
-                    <td>${exerise.min}</td>
+                    <td>${exerise.duration}</td>
                     <td>minutes</td>
                 </tr>
             </#list>
@@ -159,8 +163,8 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Type', 'Amount'],
-            ['Calories', 167],
-            ['Burned calories', 54],
+            ['Calories', ${day.calories}],
+            ['Burned calories', ${day.burnedCalories}],
         ]);
 
         var options = {
